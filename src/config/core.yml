@@ -2,7 +2,7 @@
 core:
 
     # The language LWC will use, specified by the shortname. For example, English = en, French = fr, German = de,
-    # and so on
+    # and so on,　default :ja
     locale: ja
 
     # How often updates are batched to the database (in seconds). If set to a higher value than 10, you may have
