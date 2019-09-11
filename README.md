@@ -25,9 +25,16 @@ Please see our [wiki](https://github.com/Tsuser1/Modern-LWC/wiki) for important 
 ### 注意点
   * 編集途中
   * 完璧ではない翻訳
+  * 必ず元あるLWCのファイルをBackupしたのちに削除し、データのみを移してください、でないときちんと日本語化されない可能性があります。
+  * このPlugin等を使用し、発生した損害等は一切保証しません。
 
 ### 日本語化方法
 今回日本語化方法は2つほどあります、１つはsrc/lang/lwc_ja.propertiesを
 ダウンロードし、.jarの同じ場所に追加した後、Configファイルでenからjaに言語を
 設定してください。※この場合1.12.2などにも対応させれる可能性があります。
 2つめはこのファイルをダウンロードし、buildしてください。
+
+### サポート
+Plugin事態のサポートはこちらでは受け付けておりませんが、
+翻訳内容のおかしな点等はGithubや[Discord](https://discord.gg/SBfB2Dd)
+にて行っております。何かありましたら、ご連絡ください。
