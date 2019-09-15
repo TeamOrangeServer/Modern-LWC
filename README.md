@@ -36,5 +36,5 @@ Please see our [wiki](https://github.com/Tsuser1/Modern-LWC/wiki) for important 
 
 ### サポート
 Plugin事態のサポートはこちらでは受け付けておりませんが、
-翻訳内容のおかしな点等はGithubや[Discord](https://discord.gg/SBfB2Dd)
+翻訳内容のおかしな点や早急にやってほしい翻訳等はGithubや[Discord](https://discord.gg/nDzK9cA)
 にて行っております。何かありましたら、ご連絡ください。
