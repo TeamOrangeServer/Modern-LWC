@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.griefcraft.lwc</groupId>
     <artifactId>Modern-LWC</artifactId>
@@ -116,16 +116,16 @@
 
                     <!-- @since 2.2.0 -->
                     <!--
-                         The current dateFormat is set to match maven's default ``yyyy-MM-dd'T'HH:mm:ssZ``
-                         Please note that in previous versions (2.2.0 - 2.2.2) the default dateFormat was set to: ``dd.MM.yyyy '@' HH:mm:ss z``. However the `RFC 822 time zone` seems to give a more reliable option in parsing the date and it's being used in maven as default.
-                     -->
+                        The current dateFormat is set to match maven's default ``yyyy-MM-dd'T'HH:mm:ssZ``
+                        Please note that in previous versions (2.2.0 - 2.2.2) the default dateFormat was set to: ``dd.MM.yyyy '@' HH:mm:ss z``. However the `RFC 822 time zone` seems to give a more reliable option in parsing the date and it's being used in maven as default.
+                    -->
                     <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
 
                     <!-- @since 2.2.0 -->
                     <!--
-                         If you want to set the timezone of the dateformat to anything in particular you can do this by using this option.
-                         As a general warning try to avoid three-letter time zone IDs because the same abbreviation are often used for multiple time zones.
-                         The default value we'll use the timezone use the timezone that's shipped with java (java.util.TimeZone.getDefault().getID()).
+                        If you want to set the timezone of the dateformat to anything in particular you can do this by using this option.
+                        As a general warning try to avoid three-letter time zone IDs because the same abbreviation are often used for multiple time zones.
+                        The default value we'll use the timezone use the timezone that's shipped with java (java.util.TimeZone.getDefault().getID()).
                          *Note*: If you plan to set the java's timezone by using `MAVEN_OPTS=-Duser.timezone=UTC mvn clean package`, `mvn clean package -Duser.timezone=UTC` or any other configuration keep in mind that this option will override those settings and will not take other configurations into account!
                     -->
                     <dateFormatTimeZone>${user.timezone}</dateFormatTimeZone>
@@ -199,19 +199,19 @@
 
                     <!-- @since 2.1.12 -->
                     <!--
-                       Use with caution!
+                        Use with caution!
 
-                       In a multi-module build, only run once. This means that the plugins effects will only execute once, for the parent project.
-                       This probably won't "do the right thing" if your project has more than one git repository.
+                        In a multi-module build, only run once. This means that the plugins effects will only execute once, for the parent project.
+                        This probably won't "do the right thing" if your project has more than one git repository.
 
-                       Important: If you're using `generateGitPropertiesFile`, setting `runOnlyOnce` will make the plugin
-                       only generate the file in the directory where you started your build (!).
+                        Important: If you're using `generateGitPropertiesFile`, setting `runOnlyOnce` will make the plugin
+                        only generate the file in the directory where you started your build (!).
 
-                       Important: Please note that the git-commit-id-plugin also has an option to skip pom project (`<packaging>pom</packaging>`).
-                       If you plan to use the `runOnlyOnce` option alongside with an aggregator pom you may want to set `<skipPoms>false</skipPoms>`.
+                        Important: Please note that the git-commit-id-plugin also has an option to skip pom project (`<packaging>pom</packaging>`).
+                        If you plan to use the `runOnlyOnce` option alongside with an aggregator pom you may want to set `<skipPoms>false</skipPoms>`.
 
-                       The `git.*` maven properties are available in all modules.
-                       Default value is `false`.
+                        The `git.*` maven properties are available in all modules.
+                    Default value is `false`.
                     -->
                     <runOnlyOnce>false</runOnlyOnce>
 
@@ -265,57 +265,57 @@
                     <replacementProperties>
                         <!-- example: apply replacement only to the specific property git.branch and replace '/' with '-'
                         <replacementProperty>
-                          <property>git.branch</property>
-                          <propertyOutputSuffix>something</propertyOutputSuffix>
-                          <token>^([^\/]*)\/([^\/]*)$</token>
-                          <value>$1-$2</value>
-                          <regex>true</regex>
-                          <transformationRules>
+                            <property>git.branch</property>
+                            <propertyOutputSuffix>something</propertyOutputSuffix>
+                            <token>^([^\/]*)\/([^\/]*)$</token>
+                            <value>$1-$2</value>
+                            <regex>true</regex>
+                            <transformationRules>
                             <transformationRule>
-                              <apply>BEFORE</apply>
-                              <action>UPPER_CASE</action>
+                                <apply>BEFORE</apply>
+                                <action>UPPER_CASE</action>
                             </transformationRule>
                             <transformationRule>
-                              <apply>AFTER</apply>
-                              <action>LOWER_CASE</action>
+                                <apply>AFTER</apply>
+                                <action>LOWER_CASE</action>
                             </transformationRule>
-                          </transformationRules>
+                            </transformationRules>
                         </replacementProperty>
                         -->
                     </replacementProperties>
 
                     <!-- @since 2.1.10 -->
                     <!--
-                      false is default here, if set to true it uses native `git` executable for extracting all data.
-                      This usually has better performance than the default (jgit) implementation, but requires you to
-                      have git available as executable for the build as well as *might break unexpectedly* when you
-                      upgrade your system-wide git installation.
+                        false is default here, if set to true it uses native `git` executable for extracting all data.
+                        This usually has better performance than the default (jgit) implementation, but requires you to
+                        have git available as executable for the build as well as *might break unexpectedly* when you
+                        upgrade your system-wide git installation.
 
-                      As rule of thumb - stay on `jgit` (keep this `false`) until you notice performance problems.
+                        As rule of thumb - stay on `jgit` (keep this `false`) until you notice performance problems.
                     -->
                     <useNativeGit>false</useNativeGit>
 
                     <!-- @since v2.0.4 -->
                     <!--
-                         Controls the length of the abbreviated git commit it (git.commit.id.abbrev)
+                        Controls the length of the abbreviated git commit it (git.commit.id.abbrev)
 
-                         Defaults to `7`.
-                         `0` carries the special meaning.
-                         Maximum value is `40`, because of max SHA-1 length.
-                     -->
+                        Defaults to `7`.
+                        `0` carries the special meaning.
+                        Maximum value is `40`, because of max SHA-1 length.
+                    -->
                     <abbrevLength>7</abbrevLength>
 
 
                     <!-- @since v2.2.0 -->
                     <!--
-                         The option can be used to tell the plugin how it should generate the 'git.commit.id' property. Due to some naming issues when exporting the properties as an json-object (https://github.com/ktoso/maven-git-commit-id-plugin/issues/122) we needed to make it possible to export all properties as a valid json-object.
-                         Due to the fact that this is one of the major properties the plugin is exporting we just don't want to change the exporting mechanism and somehow throw the backwards compatibility away.
-                         We rather provide a convenient switch where you can choose if you would like the properties as they always had been, or if you rather need to support full json-object compatibility.
-                         In the case you need to fully support json-object we unfortunately need to change the 'git.commit.id' property from 'git.commit.id' to 'git.commit.id.full' in the exporting mechanism to allow the generation of a fully valid json object.
+                        The option can be used to tell the plugin how it should generate the 'git.commit.id' property. Due to some naming issues when exporting the properties as an json-object (https://github.com/ktoso/maven-git-commit-id-plugin/issues/122) we needed to make it possible to export all properties as a valid json-object.
+                        Due to the fact that this is one of the major properties the plugin is exporting we just don't want to change the exporting mechanism and somehow throw the backwards compatibility away.
+                        We rather provide a convenient switch where you can choose if you would like the properties as they always had been, or if you rather need to support full json-object compatibility.
+                        In the case you need to fully support json-object we unfortunately need to change the 'git.commit.id' property from 'git.commit.id' to 'git.commit.id.full' in the exporting mechanism to allow the generation of a fully valid json object.
 
-                         Currently the switch allows two different options:
-                         1. By default this property is set to 'flat' and will generate the formerly known property 'git.commit.id' as it was in the previous versions of the plugin. Keeping it to 'flat' by default preserve backwards compatibility and does not require further adjustments by the end user.
-                         2. If you set this switch to 'full' the plugin will export the formerly known property 'git.commit.id' as 'git.commit.id.full' and therefore will generate a fully valid json object in the exporting mechanism.
+                        Currently the switch allows two different options:
+                        1. By default this property is set to 'flat' and will generate the formerly known property 'git.commit.id' as it was in the previous versions of the plugin. Keeping it to 'flat' by default preserve backwards compatibility and does not require further adjustments by the end user.
+                        2. If you set this switch to 'full' the plugin will export the formerly known property 'git.commit.id' as 'git.commit.id.full' and therefore will generate a fully valid json object in the exporting mechanism.
 
                          *Note*: Depending on your plugin configuration you obviously can choose the 'prefix' of your properties by setting it accordingly in the plugin's configuration. As a result this is therefore only an illustration what the switch means when the 'prefix' is set to it's default value.
                          *Note*: If you set the value to something that's not equal to 'flat' or 'full' (ignoring the case) the plugin will output a warning and will fallback to the default 'flat' mode.
@@ -339,10 +339,10 @@
                         -->
                         <always>false</always>
                         <!--
-                             how many chars should be displayed as the commit object id?
-                             7 is git's default,
-                             0 has a special meaning (see end of this README.md),
-                             and 40 is the maximum value here
+                            how many chars should be displayed as the commit object id?
+                            7 is git's default,
+                            0 has a special meaning (see end of this README.md),
+                            and 40 is the maximum value here
                         -->
                         <abbrev>7</abbrev>
 
@@ -362,8 +362,8 @@
                         <tags>false</tags>
 
                         <!--
-                             always print using the "tag-commits_from_tag-g_commit_id-maybe_dirty" format, even if "on" a tag.
-                             The distance will always be 0 if you're "on" the tag.
+                            always print using the "tag-commits_from_tag-g_commit_id-maybe_dirty" format, even if "on" a tag.
+                            The distance will always be 0 if you're "on" the tag.
                         -->
                         <forceLongFormat>false</forceLongFormat>
                     </gitDescribe>
@@ -376,11 +376,11 @@
                     <validationProperties>
                         <validationProperty>
                             <!--
-                                 A descriptive name that will be used to be able to identify the validation that does not match up (will be displayed in the error message).
+                                A descriptive name that will be used to be able to identify the validation that does not match up (will be displayed in the error message).
                             -->
                             <name>validating project version</name>
                             <!--
-                                 the value that needs the validation
+                                the value that needs the validation
                                  *Note* : In order to be able to validate the generated git-properties inside the pom itself you may need to set the configuration `<injectAllReactorProjects>true</injectAllReactorProjects>`.
                             -->
                             <value>${project.version}</value>
